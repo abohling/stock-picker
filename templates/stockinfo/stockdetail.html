@@ -1,0 +1,106 @@
+{% extends 'base.html' %} {% block content %}
+<section>
+  <h1>{{data['Name']}}</h1>
+  <h5>Stock Ticker Symbol: {{data['Symbol']}}</h5>
+</section>
+<section id="apiContainer">
+  <ul class="heading-api-list">
+    <li>
+      <span>
+        <a href="idkl" id="chartslink">Charts</a>
+      </span>
+    </li>
+    <li>
+      <span>
+        <a href="idkl" id="balancelink">Balance sheet</a>
+      </span>
+    </li>
+    <li>
+      <span>
+        <a href="idkl" id="newslink">News</a>
+      </span>
+    </li>
+  </ul>
+</section>
+
+<div id="apiInfoConatiner"></div>
+
+<div>
+  <div>
+    <h4>Description of {{data['Name']}}</h4>
+    <p>{{data['Description']}}</p>
+  </div>
+  <div class="table-wrapper">
+    <div class="row">
+      <div class="column">
+        <table class="table-left">
+          <tr>
+            <th>Exchange</th>
+            <td>{{data['Exchange']}}</td>
+          </tr>
+          <tr>
+            <th>Country</th>
+            <td>{{data['Country']}}</td>
+          </tr>
+          <tr>
+            <th>Sector</th>
+            <td>{{data['Sector']}}</td>
+          </tr>
+          <tr>
+            <th>Address</th>
+            <td>{{data['Address']}}</td>
+          </tr>
+          <tr>
+            <th>Analyst Target Price</th>
+            <td>{{data['AnalystTargetPrice']}}</td>
+          </tr>
+          <tr>
+            <th>Revenue Per Share TTM</th>
+            <td>{{data['RevenuePerShareTTM']}}</td>
+          </tr>
+          <tr>
+            <th>Revenue TTM</th>
+            <td>{{data['RevenueTTM']}}</td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="column">
+        <table class="table-right">
+          <tr>
+            <th>Pe ratio</th>
+            <td>{{data['PERatio']}}</td>
+          </tr>
+          <tr>
+            <th>Dividend Per Share</th>
+            <td>{{data['DividendPerShare']}}</td>
+          </tr>
+          <tr>
+            <th>Dividend Date</th>
+            <td>{{data['DividendDate']}}</td>
+          </tr>
+          <tr>
+            <th>EPS</th>
+            <td>{{data['EPS']}}</td>
+          </tr>
+          <tr>
+            <th>Year high and Low</th>
+            <td>{{data['52WeekHigh']}} - {{data['52WeekLow']}}</td>
+          </tr>
+          <tr>
+            <th>200 Day Moving Average</th>
+            <td>{{data['200DayMovingAverage']}}</td>
+          </tr>
+          <tr>
+            <th>50 Day Moving Average</th>
+            <td>{{data['50DayMovingAverage']}}</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="mapc container"></div>
+
+{% endblock %}
