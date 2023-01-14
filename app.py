@@ -46,13 +46,13 @@ def do_login(user):
     session[CURR_USER_KEY] = user.id
 
 ######################################################################
-@app.route("/")
+@app.route("/home")
 def base():
 
-    return render_template("base.html")
+    return render_template("/users/mainpage.html")
 
 
-@app.route("/signup", methods=["GET", "POST"])
+@app.route("/", methods=["GET", "POST"])
 def signup():
 
     form = UserAddForm()
@@ -70,7 +70,7 @@ def signup():
             return render_template('/users/signup.html', form=form)
         do_login(user)
 
-        return redirect("/")
+        return redirect("/home")
 
     else:
         return render_template('/users/signup.html', form=form)

@@ -4,6 +4,7 @@ const AKEY = "16BU8NH1BF15DGXD";
 $stockId = $("#stockId");
 $search = $("#search");
 $searchForm = $("#searchForm");
+$starter = $("#starter");
 
 //for the search function and route to stock detail page
 
@@ -24,15 +25,22 @@ async function stockGeneralInfo(term) {
   };
 
   return stock;
-
-  //console.log(`${stock.symbol} ${stock.price} ${stock.dailyPointsChange} ${stock.dailyChange} ${stock.DateOfPrice}`)
 }
 
 function populateStockDetails(stock) {
   $stockId.empty();
+  $starter.remove();
 
-  const $stock = $(
-    `<div>
+  if (stock.symbol === undefined) {
+    const failedstock = $(
+      `<div class="failed">
+        <p>Entered Stock Symbol Is Not A US Stock</p>
+      </div`
+    );
+    $stockId.append(failedstock);
+  } else {
+    const $stock = $(
+      `<div class= "signupcontainer">
         <form id="stockform" action="/stockdetails">
             <input class="btn btn-primary" type="submit" name="stockinfo" id="stockSym" value="${stock.symbol}">
             <br>
@@ -49,8 +57,9 @@ function populateStockDetails(stock) {
             <label for="stockinfo">Daily Percent Change: ${stock.dailyChange}</label>
         </form>
     </div>`
-  );
-  $stockId.append($stock);
+    );
+    $stockId.append($stock);
+  }
 }
 
 async function searchForShowAndDisplay() {
@@ -68,20 +77,9 @@ async function searchForShowAndDisplay() {
 $searchForm.on("submit", async function (evt) {
   evt.preventDefault();
   await searchForShowAndDisplay();
-  //need to reset it
-  //$searchForm.value = 'enter stock ticker'
 });
 
 //////// button for favorites    ///////
-
-// use this for graphing information change the div amount tho, can only have 5 favorites due to restrictions if you want live data
-
-//    for (let x in stock["Time Series (Daily)"]){
-//           console.log(stock["Time Series (Daily)"][x]["7. dividend amount"])}
-
-//https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=IBM&apikey=demo
-
-// myTextOptions['character names'].kid;
 
 //////// api links for each stock map,balance sheet, news
 
@@ -234,6 +232,7 @@ async function balanceSheetInfo(term) {
 
   $("#apiInfoConatiner").append(table);
   $("table").first().addClass("apiTable");
+  $("#apiInfoContainer");
 }
 
 $("#balancelink").on("click", async function (evt) {

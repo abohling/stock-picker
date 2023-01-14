@@ -187,3 +187,33 @@ nav form.navbar-form {
 .apiTable {
     width: 100%;
 }
+
+
+/* sign up class form */
+
+.signupcontainer {
+    width: 33%;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+    background-color: #fff;
+    padding: 20px;
+    margin: 8% auto 0;
+    text-align: center;
+}
+
+.homecontainer {
+        width: 100%;
+            box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+            background-color: #fff;
+            padding: 20px;
+            margin: 8% auto 0;
+            text-align: center;
+}
+
+.failed {
+    width: 100%;
+        font-size: 2em;
+        color: white;
+        background-color: rgb(244, 126, 126);
+        padding: 20px;
+        text-align: center;
+}
