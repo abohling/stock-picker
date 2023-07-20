@@ -5,7 +5,7 @@
 
 ## smaller header
 
-Stock-pick is an app that is geared toward the financial professional. The easy search and detail function all you to look up real-time data and analysis. Using api endpoints from >https://www.alphavantage.co/documentation/#intraday-extended, allows you to fully immerse yourself into each company's financials.
+Stock-pick is an app that is geared toward the financial professional. The easy search and detail function all you to look up real-time data and analysis. Using API endpoints from >https://www.alphavantage.co/documentation/#intraday-extended, allows you to fully immerse yourself into each company's financials.
 
 ## Features
 -log in pic
