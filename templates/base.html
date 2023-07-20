@@ -54,7 +54,7 @@
             </form>
           </li>
           {% endif %} {% if not g.user %}
-          <li><a href="/signup">Sign Up</a></li>
+          <li><a href="/">Sign Up</a></li>
           <li><a href="/login">Login</a></li>
           {% else %}
           <li>
@@ -71,7 +71,7 @@
 
     <div class="container" style="margin-top: 2em">
       {% for category, message in get_flashed_messages(with_categories=True) %}
-      <div class="alert alert-{{ category }}">{{ message}}</div>
+      <div class="alert alert-{{ category }}">{{ message }}</div>
       {% endfor %}
 
       <section id="stockId" class="row"></section>
@@ -81,6 +81,15 @@
       </section>
       {% block content %} {% endblock %}
     </div>
+
+    <footer>
+      <div class="footer-container">
+        <span></span>
+        <span>© 2023 Adam Bohling.</span>
+        <span>All rights reserved.</span>
+      </div>
+      
+    </footer>
 
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
